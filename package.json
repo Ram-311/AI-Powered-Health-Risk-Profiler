@@ -4,9 +4,3 @@
     "start": "node backend/server.js"
   }
 }
-
-{
-  "dependencies": {
-    "ngrok": "^5.0.0-beta.2"
-  }
-}
