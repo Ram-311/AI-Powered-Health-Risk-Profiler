@@ -1,4 +1,11 @@
 {
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "start": "node backend/server.js"
+  }
+}
+
+{
   "dependencies": {
     "ngrok": "^5.0.0-beta.2"
   }
