@@ -5,16 +5,36 @@ function FileUpload() {
   const [result, setResult] = useState("");
   const [loading, setLoading] = useState(false);
 
+  // const handleUpload = async () => {
+  //   if (!file) return alert("Select a file first");
+  //   setLoading(true);
+  //   const formData = new FormData();
+  //   formData.append("file", file); // Use 'file' key for clarity
+
+
+
+  //   try {
+  //     const res = await fetch("/upload", {
+  //       method: "POST",
+  //       body: formData,
+  //     });
+  //     const data = await res.json();
+  //     setResult(JSON.stringify(data, null, 2));
+  //   } catch (err) {
+  //     alert("Upload failed: " + err.message);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
   const handleUpload = async () => {
     if (!file) return alert("Select a file first");
     setLoading(true);
     const formData = new FormData();
-    formData.append("file", file); // Use 'file' key for clarity
-
-
-
+    formData.append("form", file); // Match backend
+  
     try {
-      const res = await fetch("/upload", {
+      const res = await fetch("https://ai-powered-health-risk-profiler-2.onrender.com/upload", {
         method: "POST",
         body: formData,
       });
@@ -26,7 +46,7 @@ function FileUpload() {
       setLoading(false);
     }
   };
-
+  
   return (
     <div className="container">
       <h2>Upload Scanned Form</h2>
